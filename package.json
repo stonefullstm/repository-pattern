@@ -1,0 +1,24 @@
+{
+  "name": "summer-curriculo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build && node ./build/index.js",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tsconfig/node16": "1.0",
+    "@types/node": "16.11",
+    "typescript": "4.4"
+  },
+  "dependencies": {
+    "camelize": "^1.0.1",
+    "dotenv": "10.0",
+    "mysql2": "2.3",
+    "snakeize": "^0.1.0"
+  }
+}

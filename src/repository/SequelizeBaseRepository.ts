@@ -24,7 +24,6 @@ export default abstract class SequelizeBaseRepository<T> extends BaseRepository<
   }
   async delete(id: number): Promise<boolean> {
     const modelAtt = this._model.getAttributes();
-    console.log(modelAtt);
     
     // const keys = Object.keys(modelAtt) as (keyof typeof modelAtt)[];
     // const index = keys.findIndex((key) => key === this._id);

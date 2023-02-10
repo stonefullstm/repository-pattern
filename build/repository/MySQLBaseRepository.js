@@ -62,10 +62,9 @@ class MySQLBaseRepository extends BaseRepository_1.default {
             const placeholders = Object.keys(item)
                 .map((_key) => '?')
                 .join(', ');
-            const result = yield this.connect().execute(`INSERT INTO ${this._tableName} (${columns}) VALUE (${placeholders})`, [...Object.values(item)]);
-            console.log(result);
-            // const { affectedRows } = result as ResultSetHeader ;
-            return true;
+            const [result] = yield this.connect().execute(`INSERT INTO ${this._tableName} (${columns}) VALUE (${placeholders})`, [...Object.values(item)]);
+            const { insertId } = result;
+            return insertId;
         });
     }
     update(id, item) {
